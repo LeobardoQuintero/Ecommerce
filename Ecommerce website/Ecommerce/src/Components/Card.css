@@ -1,13 +1,54 @@
 .card {
-  justify-content: center;
-  margin: auto;
-  width: 50%;
-  border: 3px solid rgb(0, 0, 0);
+  background-color: rgb(255, 39, 39);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px black;
+  width: 300px;
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
 }
 
 .card-image {
-  margin: auto;
-  display: block;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  max-width: 200px;
+  border-radius: 8px;
 }
+
+.card-content {
+  margin-left: 20px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.card-price{
+  font-weight: bold;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card-button,
+.view-item-button {
+  flex: 1;
+  background-color: aqua;
+  color: rgb(255, 0, 0);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+

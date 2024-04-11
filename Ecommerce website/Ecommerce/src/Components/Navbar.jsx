@@ -19,8 +19,12 @@ const Navbar = ({token, setToken}) => {
                 Prodcuts
             </Link>
             <Link to={"/Register"}> Register </Link>
+            <Link to={"/checkout"}> Checkout  </Link> 
             {token ? (
-            <button className='logout-button' onClick={handleLogout}>Logout</button> ): (
+                <>
+                <Link className='nav-link' to={"/cart"}>cart</Link>
+            <button className='logout-button' onClick={handleLogout}>Logout</button> 
+            </> ): (
             <Link to="/login" className='nav-link'>
                 login
             </Link>  

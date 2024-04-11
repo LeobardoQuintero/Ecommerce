@@ -1,11 +1,17 @@
 import React from "react";
 import "./Card.css";
 import { useNavigate } from "react-router-dom";
+import { addCartItem } from "../utils/helpers";
 
-const ProductDetails = ({ product, isSingle }) => {
+const ProductDetails = ({ product, isSingle, cart, setCart }) => {
+  console.log("cart", cart);
   const navigate = useNavigate();
   const handleViewItemClick = () => {
-    navigate(`/${product.id}`);
+    navigate(`/products/${product.id}`);
+  };
+  const handleAddToCart = () => {
+    const productId = product.id;
+    setCart((prevCart) => addCartItem(prevCart, productId));
   };
 
   return (
@@ -16,7 +22,9 @@ const ProductDetails = ({ product, isSingle }) => {
         <p className="card-price">${product.price}</p>
         <p>{product.category}</p>
         {isSingle && <p className="card-description">{product.description}</p>}
-        <button className="card-button">Add to Cart</button>
+        <button className="card-button" onClick={handleAddToCart}>
+          Add to Cart
+        </button>
         {!isSingle && (
           <button onClick={handleViewItemClick} className="view-item-button">
             View Item
