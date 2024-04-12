@@ -4,10 +4,13 @@ import CartItemCard from "./CartItemCard";
 import { addCartItem } from "../utils/helpers";
 import { removeCartItem } from "../utils/helpers";
 import { editCartItemQunatity } from "../utils/helpers";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Cart = ({ cart, products, setCart, reduce }) => {
   const [subTotal, setSubTotal] = useState(0);
   console.log("cart", cart);
+
+  const navigate = useNavigate();
 
   const getAllItemDetails = (cartItem) =>
     products.find((product) => product.id === cartItem.productId);
@@ -60,6 +63,7 @@ const Cart = ({ cart, products, setCart, reduce }) => {
         );
       })}
       <p>Subtotal: {isNaN(subTotal) ? "$0:00" : `$${subTotal.toFixed(2)}`}</p>
+      <button onClick={() => navigate("/checkout")}>Checkout</button>
     </div>
   );
 };

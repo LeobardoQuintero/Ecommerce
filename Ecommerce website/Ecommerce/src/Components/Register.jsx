@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Register.css"
 
 const Register = ({ token }) => {
   const navigate = useNavigate();
@@ -44,9 +45,9 @@ const Register = ({ token }) => {
 
   return (
     <div>
-      <h1>Register</h1>
+      <h1 className="title">Register</h1>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="form">
           Firstname:
           <input
             type="text"
@@ -56,7 +57,7 @@ const Register = ({ token }) => {
           />
         </label>
 
-        <label>
+        <label className="form">
           Lastname:
           <input
             type="text"
@@ -66,7 +67,7 @@ const Register = ({ token }) => {
           />
         </label>
 
-        <label>
+        <label className="form">
           Email:
           <input
             type="email"
@@ -76,7 +77,7 @@ const Register = ({ token }) => {
           />
         </label>
 
-        <label>
+        <label className="form">
           Password:
           <input
             type="password"

@@ -12,14 +12,13 @@ const Navbar = ({token, setToken}) => {
   return (
     <nav className="navbar-container">
         <div>
-            Capstone
+            <strong><em>Leo's Goodwill</em></strong>
         </div>
         <div className='link'>
             <Link className='nav-link' to={"/"}>
                 Prodcuts
             </Link>
             <Link to={"/Register"}> Register </Link>
-            <Link to={"/checkout"}> Checkout  </Link> 
             {token ? (
                 <>
                 <Link className='nav-link' to={"/cart"}>cart</Link>
